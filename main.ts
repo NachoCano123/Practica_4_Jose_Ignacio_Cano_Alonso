@@ -12,6 +12,7 @@ const PORT = env.PORT || Deno.env.get("PORT") || 3100
 
 if(!MONGO_URL){
   console.error("necesitas definir mongo_url env")
+  Deno.exit()
 }
 
 try //Para ver si se conecta a la base de datos
