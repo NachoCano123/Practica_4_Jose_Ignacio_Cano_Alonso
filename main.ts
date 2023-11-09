@@ -7,7 +7,7 @@ import {load} from "https://deno.land/std@0.204.0/dotenv/mod.ts"
 
 const env = await load()
 
-const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL") //Si no esta en el archivo, miro si esta en las variables de entorno (esto || lo otro)
+let MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL") //Si no esta en el archivo, miro si esta en las variables de entorno (esto || lo otro)
 const PORT = env.PORT || Deno.env.get("PORT") || 3100
 
 if(!MONGO_URL){
