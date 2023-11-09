@@ -12,7 +12,8 @@ const PORT = env.PORT || Deno.env.get("PORT") || 3100
 
 if(!MONGO_URL){
   console.error("necesitas definir mongo_url env")
-  Deno.exit(1)
+  //Deno.exit(1) da error al ejecutar deno deploy
+  MONGO_URL = "mongodb+srv://nacho:12345@cluster0.3aayvs9.mongodb.net/BasePractica4?retryWrites=true&w=majority"
 }
 
 try //Para ver si se conecta a la base de datos
